@@ -1,0 +1,2 @@
+Toast.makeText(getApplicationContext(), "Enter length",
+                    Toast.LENGTH_LONG).show();
