@@ -1,0 +1,37 @@
+передача числового значения переменной в другую активити
+
+передающая сторона
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void onClickToAct2(View view) {
+        Intent toAct2=new Intent(MainActivity.this, Main2Activity.class);
+        
+        EditText name = findViewById(R.id.editText);
+        EditText name2 = findViewById(R.id.editText2);
+        
+        int forAct2;
+        forAct2 = Integer.parseInt(name.getText().toString());
+        int forActt2;
+        forActt2 = Integer.parseInt(name2.getText().toString());
+        toAct2.putExtra("username", forAct2);
+        toAct2.putExtra("gift", forActt2);
+        startActivity(toAct2);
+    }
+}
+принимающая сторона
+   @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        TextView info=findViewById(R.id.textView);
+
+        int user;
+      int gift;
+        int res;
+        user = getIntent().getExtras().getInt("username");
+        gift = getIntent().getExtras().getInt("gift");
+
+        res=user+gift;
