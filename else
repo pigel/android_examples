@@ -1,0 +1,6 @@
+//если в поле пусто, назначается 0
+        if (mprobout.getText().length() == 0)inprobout=0;
+        //иначе выполняется заполнение поля
+        else {
+            inprobout = Integer.parseInt(mprobout.getText().toString());
+        }
