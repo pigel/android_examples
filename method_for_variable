@@ -1,0 +1,3 @@
+ private float  convertParrotsToMeter(float parrot){
+        return (float)(parrot/7.6);
+    }
