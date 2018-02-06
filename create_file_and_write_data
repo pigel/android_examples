@@ -1,0 +1,6 @@
+String FILENAME = "hello_file";//creating file
+String mystring = "hello world!";//data
+
+FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);//method outputing stream
+fos.write(mystring.getBytes());//getting data
+fos.close();//close file
