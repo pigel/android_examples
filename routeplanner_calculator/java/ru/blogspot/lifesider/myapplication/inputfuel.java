@@ -25,7 +25,7 @@ public class inputfuel extends AppCompatActivity {
         else {
             infuelout = Float.parseFloat(mfuelout.getText().toString());
         }
-        if (mfuelazs.getText().length() == 0)infuelout=0;
+        if (mfuelazs.getText().length() == 0)infuelazs=0;
         else {
             infuelazs = Float.parseFloat(mfuelazs.getText().toString());
         }
