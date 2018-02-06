@@ -1,0 +1,67 @@
+public class MainActivity extends AppCompatActivity {
+
+    private final static String FILENAME = "content.txt";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    //save the file
+    public void savefile(View view) {
+        FileOutputStream fos=null;
+        try {
+            EditText textBox =findViewById(R.id.editText);
+            String text = textBox.getText().toString();
+        fos= openFileOutput(FILENAME,MODE_PRIVATE);//opened stream
+            fos.write(text.getBytes());//written text here
+            Toast.makeText(this, "Файл сохранен", Toast.LENGTH_SHORT).show();
+        }
+        catch(IOException ex) {
+            Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        finally{
+            try{
+                if(fos!=null)
+                    fos.close();//output stream is closed
+            }
+            catch(IOException ex){
+
+                Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+//open the file
+    public void openText(View view) {
+
+            FileInputStream fin = null;
+            TextView textView = findViewById(R.id.textView);
+            try {
+                fin = openFileInput(FILENAME);//let's create stream
+                byte[] bytes = new byte[fin.available()];
+                fin.read(bytes);
+                String text = new String (bytes);
+                textView.setText(text);//output on screen
+            }
+            catch(IOException ex) {
+
+                Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+            finally{
+
+                try{
+                    if(fin!=null)
+                        fin.close();///close stream
+                }
+                catch(IOException ex){
+
+                    Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+
+
+
+    }
