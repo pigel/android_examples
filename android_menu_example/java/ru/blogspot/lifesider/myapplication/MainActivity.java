@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
+//like onClick
     public void onSettingsMenuClick(MenuItem item) {
         TextView infoTextView = (TextView) findViewById(R.id.textView);
         infoTextView.setText("Вы выбрали пункт Settings, лучше бы выбрали кота");
