@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Калькулятор путевок KIA ceed</string>
+    <string name="probeg">пробег</string>
+    <string name="out">выезд</string>
+    <string name="probcity">город</string>
+    <string name="probtrassa">трасса</string>
+    <string name="fuel">бензин</string>
+    <string name="azs">выдано</string>
+    <string name="winter">зима</string>
+    <string name="summer">лето</string>
+    <string name="save">сохранить</string>
+    <string name="lastprob">предыдущий пробег</string>
+    <string name="predfs">остаток в баке при выезде</string>
+    <string name="sbrospredfs">сбросить предыдущие показания</string>
+    <string name="next">далее</string>
+</resources>
